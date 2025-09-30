@@ -24,7 +24,7 @@ def EliGaussPivotParc(Matriznaosingular,vetorcolunab): #n^2
         i = j + 1
         while i < n:
             ####ELIMINACAODEGAUSS
-            mij = Matriznaosingular[i][j]/Matriznaosingular[j][j] #(valor da linha i e coluna do pivô)/pivô
+            mij = Matriznaosingular[i][j]/Matriznaosingular[j][j] #(valor da linha i e coluna do pivo)/pivo
             Matriznaosingular[i] = Matriznaosingular[i] - mij*Matriznaosingular[j] #Linha [i] <- Linha [i] - mij*linha [i-1]
             vetorcolunab[i] = vetorcolunab[i] - mij*vetorcolunab[j] #mesma coisa para o vetor b
             i+=1
