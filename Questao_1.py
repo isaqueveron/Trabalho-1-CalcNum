@@ -7,7 +7,7 @@ def Funcao(angulo):
         
     Returns: alcance horizontal [metros]
     """
-    return ((100**2)/9.81)*(sin(angulo)+0.5*sin(2*angulo))-1000
+    return ((100**2)/9.8)*(sin(angulo)+0.5*sin(2*angulo))-1000
 
 def DerivadaReal(angulo):
     """
@@ -15,7 +15,7 @@ def DerivadaReal(angulo):
         
     Returns: derivada no ponto [metros]/[s]
     """
-    return ((100**2/9.81)*(cos(angulo)+cos(2*angulo)))
+    return ((100**2/9.8)*(cos(angulo)+cos(2*angulo)))
 
 #PLOT DO MODELO VARIANDO ANGULO DE 0 graus a 90 graus
 vetor_angulo = []
@@ -29,7 +29,7 @@ plt.plot(vetor_angulo,vetor_alcance,vetor_angulo,[1000]*len(vetor_angulo))
 plt.title("Alcance x Angulo")
 plt.xlabel('angulo [radianos]')
 plt.ylabel('Alcance [metros]')
-plt.show()
+#plt.show()
 ##################################################
 
 #PARAMETROS DO CRITERIO DE PARADA
@@ -64,11 +64,13 @@ def Bissecao(x1 = float, x2 = float):
     #####PLOTS
     plt.subplot(1,2,1)
     plt.plot(vetor_angulo,vetor_alcance,xk_vector,[i+1000 for i in yk_vector], "*")
+    plt.grid()
     plt.title("Alcance x Angulo (azul)\n Alcance em cada Iteracao (laranja '*')\n (BISSECAO)")
     plt.xlabel('angulo [radianos]')
-    plt.ylabel('erro [metros]')
+    plt.ylabel('alcance [metros]')
     plt.subplot(1,2,2)
     plt.plot(iter_vector,yk_vector)
+    plt.grid()
     plt.title("Iteracoes x erro \n(BISSECAO)")
     plt.xlabel('iteracoes [n]')
     plt.ylabel('erro [metros]')
@@ -109,11 +111,13 @@ def FalsaPos(x1 = float, x2 = float):
     #####PLOTS        
     plt.subplot(1,2,1)
     plt.plot(vetor_angulo,vetor_alcance,xk_vector,[i+1000 for i in yk_vector], "*")
+    plt.grid()
     plt.title("Alcance x Angulo (azul)\n Alcance em cada Iteracao (laranja '*')\n (FALSA POSICAO)")
     plt.xlabel('angulo [radianos]')
-    plt.ylabel('erro [metros]')
+    plt.ylabel('alcance [metros]')
     plt.subplot(1,2,2)
     plt.plot(iter_vector,yk_vector)
+    plt.grid()
     plt.title("Iteracoes x erro \n(FALSAPOS)")
     plt.xlabel('iteracoes [n]')
     plt.ylabel('erro [metros]')
@@ -148,11 +152,13 @@ def Newton(xn = float):
     #####PLOTS        
     plt.subplot(1,2,1)
     plt.plot(vetor_angulo,vetor_alcance,xk_vector,[i+1000 for i in yk_vector], "*")
+    plt.grid()
     plt.title("Alcance x Angulo (azul)\n Alcance em cada Iteracao (laranja '*')\n (NEWTON)")
     plt.xlabel('angulo [radianos]')
-    plt.ylabel('erro [metros]')
+    plt.ylabel('alcance [metros]')
     plt.subplot(1,2,2)
     plt.plot(iter_vector,yk_vector)
+    plt.grid()
     plt.title("Iteracoes x erro \n(NEWTON)")
     plt.xlabel('iteracoes [n]')
     plt.ylabel('erro [metros]')
@@ -192,11 +198,13 @@ def Secante(x1 = float, x2 = float):
     #####PLOTS        
     plt.subplot(1,2,1)
     plt.plot(vetor_angulo,vetor_alcance,xk_vector,[i+1000 for i in yk_vector], "*")
+    plt.grid()
     plt.title("Alcance x Angulo (azul)\n Alcance em cada Iteracao (laranja '*')\n (SECANTE)")
     plt.xlabel('angulo [radianos]')
-    plt.ylabel('erro [metros]')
+    plt.ylabel('alcance [metros]')
     plt.subplot(1,2,2)
     plt.plot(iter_vector,yk_vector)
+    plt.grid()
     plt.title("Iteracoes x erro \n(SECANTE)")
     plt.xlabel('iteracoes [n]')
     plt.ylabel('erro [metros]')
