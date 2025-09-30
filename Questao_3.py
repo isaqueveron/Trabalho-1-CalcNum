@@ -143,30 +143,6 @@ def Newton(vetorx:np.ndarray) -> np.ndarray:
         ###############################
 
     ###################-----PLOTS 
-    plt.subplot(2,2,1) 
-    plt.plot(iter_vector,deltap_vector)
-    plt.title("Queda de pressao no oleoduto  [Pa]",loc = 'left')
-    plt.xlabel('iteracoes [n]',loc='right')
-    plt.ylabel('deltaP [Pa]')
-    plt.subplot(2,2,2) 
-    plt.plot(iter_vector,tin_vector)
-    plt.title("Temperatura na entrada do oleoduto [graus]",loc = 'left')
-    plt.xlabel('iteracoes [n]',loc='right')
-    plt.ylabel('Tin [graus]')
-    plt.subplot(2,2,3) 
-    plt.plot(iter_vector,tout_vector)
-    plt.title("Temperatura na saida do oleoduto [graus]",loc = 'left')
-    plt.xlabel('iteracoes [n]',loc='right')
-    plt.ylabel('Tout [graus]')
-    plt.subplot(2,2,4) 
-    plt.plot(iter_vector,mimed_vector)
-    plt.title("Viscosidade media do oleo extra pesado [Pa.s]",loc = 'left')
-    plt.xlabel('iteracoes [n]',loc='right')
-    plt.ylabel('Visc. media [Pa.s]')
-    #plt.show()
-    #############################3
-
-    ###################-----PLOTS 
     plt.subplot(1,2,1) 
     plt.plot(iter_vector,deltap_vector,label = '∆p [Pa]')
     plt.plot(iter_vector,mimed_vector,label = 'µmed[Pa.s]')
@@ -183,7 +159,7 @@ def Newton(vetorx:np.ndarray) -> np.ndarray:
     plt.xlabel('iteracoes [n]',loc='right')
     plt.ylabel('Temperatura [graus]')
     plt.show()
-    #############################3
+    #############################
 
     return vetorx,iter
 
